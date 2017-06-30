@@ -13,5 +13,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://80666881.github.io/react-demo"
+  "homepage": "https://80666881.github.io/react-demo/build"
 }
