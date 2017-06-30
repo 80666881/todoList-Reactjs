@@ -8,7 +8,7 @@ const element = (
     <div className="ct">
         <div className="cover"></div>
         <div className="panel">
-            <h1>Hello world</h1>
+            <h1>Hi world</h1>
         </div>
     </div>
 )
