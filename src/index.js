@@ -2,17 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
+// import Welcome from './Welcome'
 
-const element = (
-    <div className="ct">
-        <div className="cover"></div>
-        <div className="panel">
-            <h1>Hi world</h1>
-        </div>
-    </div>
-)
 ReactDOM.render(
-    element,
-    document.getElementById('root2')
-);
+    <App />,
+    document.getElementById('root')
+)
