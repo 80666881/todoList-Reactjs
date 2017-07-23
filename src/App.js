@@ -4,15 +4,18 @@ import './App.css';
 import TodoItem from './TodoItem'
 import 'normalize.css'
 import './reset.css'
+import './iconfont/iconfont.css'
 import UserDialog from './UserDialog'
 import { getCurrentUser, signOut, TodoModel } from './leanCloud'
+import QueueAnim from 'rc-queue-anim';
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       user: getCurrentUser() || {},
       newTodo: '',
-      todoList: []
+      todoList: [],
     }
     let user = getCurrentUser()
     if (user) {
@@ -26,13 +29,29 @@ class App extends Component {
   render() {
 
     let todos = this.state.todoList
-      .filter((item) => !item.deleted)
+      .filter((item) => (!item.deleted && item.status !=='completed'))
       .map((item, index) => {
         return (
+          <QueueAnim key={index}>
           <li key={index}>
             <TodoItem todo={item} onToggle={this.toggle.bind(this)}
-              onDelete={this.delete.bind(this)} />
+              onDelete={this.delete.bind(this)} key={index}/>
           </li>
+          </QueueAnim>
+        )
+      })
+
+      //test-------------
+    let completed = this.state.todoList
+      .filter((item) => item.status ==='completed')
+      .map((item, index) => {
+        return (
+          <QueueAnim key={index}>
+            <li key={index}>
+              <TodoItem todo={item} onToggle={this.toggle.bind(this)}
+                onDelete={this.delete.bind(this)} />
+            </li>
+          </QueueAnim>
         )
       })
     
@@ -47,8 +66,17 @@ class App extends Component {
             onSubmit={this.addTodo.bind(this)} />
         </div>
         <ol className="todoList">
+          
           {todos}
         </ol>
+        
+        {/*test*/}
+        <ol className="completed">
+          <div className="doneTitle">已完成清单</div>
+          {completed} 
+        </ol>
+
+
         {this.state.user.id ?
           null :
           <UserDialog
@@ -64,7 +92,7 @@ class App extends Component {
     let stateCopy = JSON.parse(JSON.stringify(this.state))
     stateCopy.user = {}
 
-    //********myTest************
+    //********退出后清空************
     stateCopy.todoList = []
     //**************************
 
@@ -92,6 +120,7 @@ class App extends Component {
     todo.status = todo.status === 'completed' ? '' : 'completed'
     TodoModel.update(todo, () => {
       this.setState(this.state)
+
     }, (error) => {
       todo.status = oldStatus
       this.setState(this.state)

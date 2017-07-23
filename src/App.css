@@ -3,7 +3,7 @@
    color: #333;
    border: 1px solid #aaa;
    border-radius: 4px;
-   background: white;
+   background:rgba(255,255,255,0.95);
    margin: 2em;
    padding: 0 1em;
    min-height: 20em;
@@ -16,4 +16,29 @@
  .App > .todoList> li:nth-child(even){
    background: transparent;
  }
-
+ .App h1>button{
+    font-size: 20px;
+    width: 80px;
+    height: 30px;
+    float: right;
+    border-radius: 5px;
+    background-color: #eee;
+    border: 1px solid #333;
+ }
+  .App h1>button:hover{
+    background-color: lightskyblue;
+  }
+.doneTitle{
+  user-select: none;
+  margin-top: 28px;
+  border-bottom: 2px solid rgb(134,198,229);
+  padding: 5px;
+  text-align: left;
+  color: rgb(134,198,229);
+}
+.completed .TodoItem{
+  background: rgb(240,240,240);
+}
+.completed .TodoItem span{
+  text-decoration: line-through;
+}

@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^2.12.2",
     "jquery": "^3.2.1",
     "leancloud-storage": "^3.0.1",
     "normalize.css": "^7.0.0",
+    "rc-queue-anim": "^1.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.9"
@@ -16,5 +18,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://80666881.github.io/react-demo/build"
+  "homepage": "https://80666881.github.io/todoList-Reactjs/build/",
+  "devDependencies": {
+    "babel-plugin-import": "^1.2.1"
+  }
 }

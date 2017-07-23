@@ -1,5 +1,6 @@
 body{
-   background: #ddd;
+   background:url("./image/background.jpg") no-repeat ;
+   background-size:cover;
  }
  #root{
    display: flex;

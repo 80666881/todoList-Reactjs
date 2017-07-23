@@ -5,3 +5,6 @@
    font-size: 16px;
    padding: 0 .2em;
  }
+ .TodoInput:hover{
+    border: 2px solid lightblue;
+ }
