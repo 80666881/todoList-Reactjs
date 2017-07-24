@@ -16,18 +16,20 @@
  .App > .todoList> li:nth-child(even){
    background: transparent;
  }
- .App h1>button{
-    font-size: 20px;
-    width: 80px;
-    height: 30px;
-    float: right;
-    border-radius: 5px;
-    background-color: #eee;
-    border: 1px solid #333;
+ .App>h1{
+   color: #999;
+   font-size: 25px;
+   font-family: Arial, Helvetica, sans-serif;
+   color: rgb(59,153,252);
  }
-  .App h1>button:hover{
-    background-color: lightskyblue;
-  }
+ .App h1>button{
+    font-size: 30px;
+    background: none;
+    color: red;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
 .doneTitle{
   user-select: none;
   margin-top: 28px;

@@ -1,13 +1,14 @@
 .UserDialog-Wrapper{ 
    /*全屏*/      position: fixed; top: 0; left: 0; bottom: 0; right: 0; 
    /*内容居中*/  display: flex; justify-content: center; align-items: center;
-   background: hsla(0,0%,0%,0.40);
+   background: url('./image/userDialog-background.jpg') no-repeat;
+   background-size: cover;
  }
  .UserDialog{
    border: 1px solid;
    border-radius: 4px;
    min-width: 20em;
-   background: white;
+   background: rgba(230,230,230,0.5);
    border: 1px solid #aaa;
    box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
  }
@@ -18,9 +19,41 @@
 .UserDialog .forgotPassword > h3 { padding: 1em; }
 .UserDialog .forgotPassword > form { padding: 0 1em 1em; }
 
- .UserDialog form>.row{ display: flex; padding: .3em 0; }
+ .UserDialog form>.row{ display: flex; padding: 0.2em; margin-bottom: 1em;}
  .UserDialog form>.row>label:first-child{ width: 4em; }
  .UserDialog form>.row.actions{ padding-left: 4em; display: flex; align-items: center;}
  .UserDialog form>.row.actions button{ margin-right: .5em; }
- 
  .UserDialog button{font: inherit; padding: .2em;}
+ .UserDialog form input{
+   height: 1.8em;
+   border: none;
+   background: rgb(152,152,152);
+ }
+  .UserDialog form input:focus{
+    outline: none;
+ }
+  .UserDialog form i{
+    font-size: 18px;
+    margin-left: 2px;
+    margin-right: 3px;
+  }
+  .UserDialog form .icon-zhuce{
+    font-size: 14px;
+  }
+ .UserDialog form span{
+   position: relative;
+   top: -5px;
+   vertical-align: middle;
+   border: 1px solid #666;
+   border-radius: 6px;
+   padding-right: 5px;
+ }
+
+.UserDialog form >.row.actions button{
+  padding: 5px;
+   background: rgb(230,240,240);
+   border-radius: 3px;
+   border: none;
+   cursor: pointer;
+   box-shadow: 4px 4px 1px #666;
+ }

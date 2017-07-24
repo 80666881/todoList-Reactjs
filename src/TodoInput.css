@@ -1,10 +1,11 @@
 .TodoInput{
    width: 100%;
    line-height: 1.8;
+   height: 40px;
    margin-bottom: 1em;
    font-size: 16px;
    padding: 0 .2em;
- }
- .TodoInput:hover{
-    border: 2px solid lightblue;
+   border: 1px solid rgb(59,153,252);
+   border-radius: 4px;
+   color: lightcoral;
  }

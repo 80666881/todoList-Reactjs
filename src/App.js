@@ -8,6 +8,7 @@ import './iconfont/iconfont.css'
 import UserDialog from './UserDialog'
 import { getCurrentUser, signOut, TodoModel } from './leanCloud'
 import QueueAnim from 'rc-queue-anim';
+import './iconfont/iconfont.css'
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class App extends Component {
 
       //test-------------
     let completed = this.state.todoList
-      .filter((item) => item.status ==='completed')
+      .filter((item) => !item.deleted && item.status ==='completed')
       .map((item, index) => {
         return (
           <QueueAnim key={index}>
@@ -58,7 +59,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{this.state.user.username || '我'}的待办
-            {this.state.user.id ? <button onClick={this.signOut.bind(this)}>登出</button> : null}
+            {this.state.user.id ? <button onClick={this.signOut.bind(this)} className="iconfont icon-loginout"></button> : null}
         </h1>
         <div className="inputWrapper">
           <TodoInput content={this.state.newTodo}
@@ -140,7 +141,6 @@ class App extends Component {
     }
     TodoModel.create(newTodo, (id) => {
       newTodo.id = id
-      console.log(id);
       this.state.todoList.push(newTodo)
       this.setState({
         newTodo: '',
