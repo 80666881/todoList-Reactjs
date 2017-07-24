@@ -50,11 +50,14 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://80666881.github.io/todoList-Reactjs/build/",
   "devDependencies": {
-    "babel-plugin-import": "^1.2.1"
+    "babel-plugin-import": "^1.2.1",
+    "gh-pages": "^1.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
