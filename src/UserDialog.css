@@ -1,59 +1,147 @@
-.UserDialog-Wrapper{ 
-   /*全屏*/      position: fixed; top: 0; left: 0; bottom: 0; right: 0; 
-   /*内容居中*/  display: flex; justify-content: center; align-items: center;
-   background: url('./image/userDialog-background.jpg') no-repeat;
-   background-size: cover;
- }
- .UserDialog{
-   border: 1px solid;
-   border-radius: 4px;
-   min-width: 20em;
-   background: rgba(230,230,230,0.5);
-   border: 1px solid #aaa;
-   box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
- }
-.UserDialog .signInOrSignUp > nav:first-child{ padding: 1em; margin-left: -2em;}
-.UserDialog .signInOrSignUp > nav:first-child label{ margin-left: 2em; cursor: pointer;}
-.UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
- 
-.UserDialog .forgotPassword > h3 { padding: 1em; }
-.UserDialog .forgotPassword > form { padding: 0 1em 1em; }
+.UserDialog-Wrapper {
+    /*全屏*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /*内容居中*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./image/userDialog-background.jpg') no-repeat;
+    background-size: cover;
+}
 
- .UserDialog form>.row{ display: flex; padding: 0.2em; margin-bottom: 1em;}
- .UserDialog form>.row>label:first-child{ width: 4em; }
- .UserDialog form>.row.actions{ padding-left: 4em; display: flex; align-items: center;}
- .UserDialog form>.row.actions button{ margin-right: .5em; }
- .UserDialog button{font: inherit; padding: .2em;}
- .UserDialog form input{
-   height: 1.8em;
-   border: none;
-   background: rgb(152,152,152);
- }
-  .UserDialog form input:focus{
+.UserDialog {
+    border: 1px solid;
+    border-radius: 4px;
+    min-width: 20em;
+    background: rgba(230, 230, 230, 0.5);
+    border: 1px solid #aaa;
+    box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.35);
+}
+
+.UserDialog .signInOrSignUp>nav:first-child {
+    padding: 1em;
+    margin-left: -2em;
+}
+
+.UserDialog .signInOrSignUp>nav:first-child label {
+    margin-left: 2em;
+    cursor: pointer;
+}
+
+.UserDialog .signInOrSignUp>.panes {
+    padding: 0 1em 1em;
+}
+
+.UserDialog .forgotPassword>h3 {
+    padding: 1em;
+}
+
+.UserDialog .forgotPassword>form {
+    padding: 0 1em 1em;
+}
+
+.UserDialog form>.row {
+    display: flex;
+    padding: 0.2em;
+    margin-bottom: 1em;
+}
+
+.UserDialog form>.row>label:first-child {
+    width: 4em;
+}
+
+.UserDialog form>.row.actions {
+    padding-left: 4em;
+    display: flex;
+    align-items: center;
+}
+
+.UserDialog form>.row.actions button {
+    margin-right: .5em;
+}
+
+.UserDialog button {
+    font: inherit;
+    padding: .2em;
+}
+
+.UserDialog form input {
+    height: 1.8em;
+    border: none;
+    background: rgb(152, 152, 152);
+}
+
+.UserDialog form input:focus {
     outline: none;
- }
-  .UserDialog form i{
+}
+
+.UserDialog form i {
     font-size: 18px;
     margin-left: 2px;
     margin-right: 3px;
-  }
-  .UserDialog form .icon-zhuce{
-    font-size: 14px;
-  }
- .UserDialog form span{
-   position: relative;
-   top: -5px;
-   vertical-align: middle;
-   border: 1px solid #666;
-   border-radius: 6px;
-   padding-right: 5px;
- }
+}
 
-.UserDialog form >.row.actions button{
-  padding: 5px;
-   background: rgb(230,240,240);
-   border-radius: 3px;
-   border: none;
-   cursor: pointer;
-   box-shadow: 4px 4px 1px #666;
- }
+.UserDialog form .icon-zhuce {
+    font-size: 14px;
+}
+
+.UserDialog form span {
+    position: relative;
+    top: -5px;
+    vertical-align: middle;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding-right: 5px;
+}
+
+.UserDialog form>.row.actions button {
+    padding: 5px;
+    background: rgb(230, 240, 240);
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 1px #666;
+}
+
+.forgetAlert {
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    height: 50px;
+    background: rgb(243, 239, 239);
+    color: rgb(49, 158, 237);
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(49, 158, 237);
+    box-shadow: 2px 2px;
+}
+.forgetAlert.hide{
+  display: none;
+}
+
+.forgetAlert>span {
+    position: absolute;
+    width: 50px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgb(164, 231, 144)
+
+}
+.forgotPassword>.row>input{
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.forgotPassword>.row>label{
+  position: relative;
+  top: 5px;
+}

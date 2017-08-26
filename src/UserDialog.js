@@ -12,7 +12,8 @@ export default class UserDialog extends Component {
                 email: '',
                 username: '',
                 password: '',
-            }
+            },
+            sendForgetEmail:false
         }
     }
     signUp() {//signUp(e) {
@@ -101,6 +102,12 @@ export default class UserDialog extends Component {
                                 onChange={this.changeFormData.bind(this)}
                                 onSignIn={this.returnToSignIn.bind(this)}
                             />}
+
+                              {/* //测试找回密码发送提醒 */}
+                            {
+                                this.state.sendForgetEmail ===true?
+                                <div className='forgetAlert' >重置密码邮件发送成功<span onClick={this.cancel.bind(this)}>确定</span></div>:null
+                            }
                 </div>
             </div>
         )
@@ -118,5 +125,14 @@ export default class UserDialog extends Component {
     resetPassword(e) {
         e.preventDefault()
         sendPasswordResetEmail(this.state.formData.email)
+        let stateCopy = JSON.parse(JSON.stringify(this.state))
+        stateCopy.sendForgetEmail = true;
+        this.setState(stateCopy)
+    }
+    cancel(e){
+        e.preventDefault();
+        let stateCopy = JSON.parse(JSON.stringify(this.state))
+        stateCopy.sendForgetEmail = false;
+        this.setState(stateCopy)
     }
 }
